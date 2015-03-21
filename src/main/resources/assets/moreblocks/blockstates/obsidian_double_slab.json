@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "obsidian" },
+        "variant=true":    { "model": "obsidian" }
+    }
+}

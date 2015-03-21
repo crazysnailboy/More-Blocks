@@ -1,0 +1,14 @@
+{
+    "variants": {
+    
+        "half=bottom,variant=prismarine": { "model": "moreblocks:prismarine_half_slab" },
+        "half=top,variant=prismarine": { "model": "moreblocks:prismarine_upper_slab" },
+
+        "half=bottom,variant=prismarine_bricks": { "model": "moreblocks:prismarine_bricks_half_slab" },
+        "half=top,variant=prismarine_bricks": { "model": "moreblocks:prismarine_bricks_upper_slab" },
+
+        "half=bottom,variant=dark_prismarine": { "model": "moreblocks:dark_prismarine_half_slab" },
+        "half=top,variant=dark_prismarine": { "model": "moreblocks:dark_prismarine_upper_slab" }
+        
+    }
+}

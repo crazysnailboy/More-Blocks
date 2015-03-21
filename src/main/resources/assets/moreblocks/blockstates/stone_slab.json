@@ -1,0 +1,26 @@
+{
+    "variants": {
+    
+        "half=bottom,variant=stone": { "model": "moreblocks:stone_half_slab" },
+        "half=top,variant=stone": { "model": "moreblocks:stone_upper_slab" },
+
+        "half=bottom,variant=granite": { "model": "moreblocks:granite_half_slab" },
+        "half=top,variant=granite": { "model": "moreblocks:granite_upper_slab" },
+
+        "half=bottom,variant=smooth_granite": { "model": "moreblocks:smooth_granite_half_slab" },
+        "half=top,variant=smooth_granite": { "model": "moreblocks:smooth_granite_upper_slab" },
+
+        "half=bottom,variant=diorite": { "model": "moreblocks:diorite_half_slab" },
+        "half=top,variant=diorite": { "model": "moreblocks:diorite_upper_slab" },
+        
+        "half=bottom,variant=smooth_diorite": { "model": "moreblocks:smooth_diorite_half_slab" },
+        "half=top,variant=smooth_diorite": { "model": "moreblocks:smooth_diorite_upper_slab" },
+
+        "half=bottom,variant=andesite": { "model": "moreblocks:andesite_half_slab" },
+        "half=top,variant=andesite": { "model": "moreblocks:andesite_upper_slab" },
+        
+        "half=bottom,variant=smooth_andesite": { "model": "moreblocks:smooth_andesite_half_slab" },
+        "half=top,variant=smooth_andesite": { "model": "moreblocks:smooth_andesite_upper_slab" }
+        
+    }
+}

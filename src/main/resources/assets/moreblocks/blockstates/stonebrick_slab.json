@@ -1,0 +1,14 @@
+{
+    "variants": {
+    
+        "half=bottom,variant=mossy_stonebrick": { "model": "moreblocks:mossy_stone_brick_half_slab" },
+        "half=top,variant=mossy_stonebrick": { "model": "moreblocks:mossy_stone_brick_upper_slab" },
+
+        "half=bottom,variant=cracked_stonebrick": { "model": "moreblocks:cracked_stone_brick_half_slab" },
+        "half=top,variant=cracked_stonebrick": { "model": "moreblocks:cracked_stone_brick_upper_slab" },
+
+        "half=bottom,variant=chiseled_stonebrick": { "model": "moreblocks:chiseled_stone_brick_half_slab" },
+        "half=top,variant=chiseled_stonebrick": { "model": "moreblocks:chiseled_stone_brick_upper_slab" }
+        
+    }
+}

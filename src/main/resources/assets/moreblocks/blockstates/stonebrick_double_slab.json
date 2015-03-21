@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "variant=mossy_stonebrick": { "model": "stonebrick_mossy" },
+        "variant=cracked_stonebrick":    { "model": "stonebrick_cracked" },
+        "variant=chiseled_stonebrick":    { "model": "stonebrick_chiseled" }
+    }
+}

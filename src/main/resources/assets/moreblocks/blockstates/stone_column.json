@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "axis=none,variant=granite":  { "model": "moreblocks:granite_lines" },
+        "axis=y,variant=granite":  { "model": "moreblocks:granite_lines" },
+        "axis=z,variant=granite":  { "model": "moreblocks:granite_lines", "x": 90 },
+        "axis=x,variant=granite":  { "model": "moreblocks:granite_lines", "x": 90, "y": 90 },
+        
+        "axis=none,variant=diorite":  { "model": "moreblocks:diorite_lines" },
+        "axis=y,variant=diorite":  { "model": "moreblocks:diorite_lines" },
+        "axis=z,variant=diorite":  { "model": "moreblocks:diorite_lines", "x": 90 },
+        "axis=x,variant=diorite":  { "model": "moreblocks:diorite_lines", "x": 90, "y": 90 },
+        
+        "axis=none,variant=andesite":  { "model": "moreblocks:andesite_lines" },
+        "axis=y,variant=andesite":  { "model": "moreblocks:andesite_lines" },
+        "axis=z,variant=andesite":  { "model": "moreblocks:andesite_lines", "x": 90 },
+        "axis=x,variant=andesite":  { "model": "moreblocks:andesite_lines", "x": 90, "y": 90 }
+        
+    }
+}
+

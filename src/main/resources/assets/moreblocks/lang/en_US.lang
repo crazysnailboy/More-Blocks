@@ -1,0 +1,87 @@
+language.name=English
+language.region=US
+language.code=en_US
+
+itemGroup.moreblocks_tabBlock=Chris' More Blocks Mod
+
+item.nether_stick.name=Nether Rod
+
+tile.andesite_column.name=Andesite Pillar
+tile.andesite_slab.name=Andesite Slab
+tile.andesite_stairs.name=Andesite Stairs
+tile.andesite_wall.name=Andesite Wall
+
+tile.brick_wall.name=Brick Wall
+
+tile.chiseled_red_sandstone_wall.name=Chiseled Red Sandstone Wall
+
+tile.chiseled_sandstone_wall.name=Chiseled Sandstone Wall
+
+tile.chiseled_stonebrick_slab.name=Chiseled Stone Brick Slab
+tile.chiseled_stonebrick_stairs.name=Chiseled Stone Brick Stairs
+tile.chiseled_stonebrick_wall.name=Chiseled Stone Brick Wall
+
+tile.cracked_stonebrick_slab.name=Cracked Stone Brick Slab
+tile.cracked_stonebrick_stairs.name=Cracked Stone Brick Stairs
+tile.cracked_stonebrick_wall.name=Cracked Stone Brick Wall
+
+tile.dark_prismarine_slab.name=Dark Prismarine Slab
+tile.dark_prismarine_stairs.name=Dark Prismarine Stairs
+tile.dark_prismarine_wall.name=Dark Prismarine Wall
+
+tile.diorite_column.name=Diorite Pillar
+tile.diorite_slab.name=Diorite Slab
+tile.diorite_stairs.name=Diorite Stairs
+tile.diorite_wall.name=Diorite Wall
+
+tile.granite_column.name=Granite Pillar
+tile.granite_slab.name=Granite Slab
+tile.granite_stairs.name=Granite Stairs
+tile.granite_wall.name=Granite Wall
+
+tile.mossy_stonebrick_slab.name=Mossy Stone Brick Slab
+tile.mossy_stonebrick_stairs.name=Mossy Stone Brick Stairs
+tile.mossy_stonebrick_wall.name=Mossy Stone Brick Wall
+
+tile.nether_brick_fence_gate.name=Nether Brick Fence Gate
+tile.nether_brick_wall.name=Nether Brick Wall
+
+tile.obsidian_slab.name=Obsidian Slab
+tile.obsidian_stairs.name=Obsidian Stairs
+tile.obsidian_wall.name=Obsidian Wall
+
+tile.prismarine_slab.name=Prismarine Slab
+tile.prismarine_stairs.name=Prismarine Stairs
+tile.prismarine_wall.name=Prismarine Wall
+
+tile.prismarine_bricks_slab.name=Prismarine Brick Slab
+tile.prismarine_bricks_stairs.name=Prismarine Brick Stairs
+tile.prismarine_bricks_wall.name=Prismarine Brick Wall
+
+tile.red_sandstone_wall.name=Red Sandstone Wall
+
+tile.sandstone_wall.name=Sandstone Wall
+
+tile.smooth_andesite_slab.name=Polished Andesite Slab
+tile.smooth_andesite_stairs.name=Polished Andesite Stairs
+tile.smooth_andesite_wall.name=Polished Andesite Wall
+
+tile.smooth_diorite_slab.name=Polished Diorite Slab
+tile.smooth_diorite_stairs.name=Polished Diorite Stairs
+tile.smooth_diorite_wall.name=Polished Diorite Wall
+
+tile.smooth_granite_slab.name=Polished Granite Slab
+tile.smooth_granite_stairs.name=Polished Granite Stairs
+tile.smooth_granite_wall.name=Polished Granite Wall
+
+tile.smooth_red_sandstone_wall.name=Smooth Red Sandstone Wall
+
+tile.smooth_sandstone_wall.name=Smooth Sandstone Wall
+
+tile.smooth_stone.name=Polished Stone
+
+tile.stone_slab.name=Stone Slab
+tile.stone_stairs.name=Stone Stairs
+tile.stone_wall.name=Stone Wall
+
+tile.stonebrick_wall.name=Stone Brick Wall
