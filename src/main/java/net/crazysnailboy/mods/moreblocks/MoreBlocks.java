@@ -1,8 +1,7 @@
 package net.crazysnailboy.mods.moreblocks;
 
-import net.crazysnailboy.mods.moreblocks.client.settings.ModSettings;
+import net.crazysnailboy.mods.moreblocks.common.config.ModConfiguration;
 import net.crazysnailboy.mods.moreblocks.init.ModBlocks;
-import net.crazysnailboy.mods.moreblocks.init.ModBootstrap;
 import net.crazysnailboy.mods.moreblocks.init.ModItems;
 import net.crazysnailboy.mods.moreblocks.item.crafting.Recipes;
 import net.crazysnailboy.mods.moreblocks.proxy.CommonProxy;
@@ -14,9 +13,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 
-@Mod(modid = ModBootstrap.MOD_ID, name = ModBootstrap.MOD_NAME, version = ModBootstrap.VERSION)
+@Mod(modid = MoreBlocks.MOD_ID, name = MoreBlocks.MOD_NAME, version = MoreBlocks.VERSION)
 
 public class MoreBlocks {
+
+	public static final String MOD_ID = "moreblocks";
+	public static final String MOD_NAME = "Chris' More Blocks Mod";
+	public static final String VERSION = "0.2";
 	
 	private static final String CLIENT_PROXY_CLASS = "net.crazysnailboy.mods.moreblocks.proxy.ClientProxy";
 	private static final String SERVER_PROXY_CLASS = "net.crazysnailboy.mods.moreblocks.proxy.CommonProxy";
@@ -29,7 +32,7 @@ public class MoreBlocks {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		ModSettings.loadConfigurationFromFile(event.getSuggestedConfigurationFile());
+		ModConfiguration.loadConfigurationFromFile(event.getSuggestedConfigurationFile());
 		
 		ModBlocks.initializeBlocks();
 		ModItems.initializeItems();

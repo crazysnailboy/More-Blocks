@@ -1,7 +1,6 @@
 package net.crazysnailboy.mods.moreblocks.block;
 
 import net.crazysnailboy.mods.moreblocks.MoreBlocks;
-import net.crazysnailboy.mods.moreblocks.init.ModBootstrap;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -108,7 +107,7 @@ public abstract class BlockSlab extends net.minecraft.block.BlockSlab {
 		
 		System.out.println(blockId);
 
-		Item item = GameRegistry.findItem(ModBootstrap.MOD_ID, blockId); //GameUtility.getItemFromBlock(blockId);
+		Item item = GameRegistry.findItem(MoreBlocks.MOD_ID, blockId); //GameUtility.getItemFromBlock(blockId);
     	
 		System.out.println("NULL: " + (item == null));
 		
@@ -127,7 +126,7 @@ public abstract class BlockSlab extends net.minecraft.block.BlockSlab {
 		String blockId = this.getUnlocalizedName().substring(5);
 		System.out.println(blockId);
 
-		Item item = GameRegistry.findItem(ModBootstrap.MOD_ID, blockId); //GameUtility.getItemFromBlock(blockId);
+		Item item = GameRegistry.findItem(MoreBlocks.MOD_ID, blockId); //GameUtility.getItemFromBlock(blockId);
     	
 		System.out.println("NULL: " + (item == null));
 		

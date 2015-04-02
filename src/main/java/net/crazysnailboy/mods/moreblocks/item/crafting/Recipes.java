@@ -7,6 +7,7 @@ import net.crazysnailboy.mods.moreblocks.block.BlockStonePillar;
 import net.crazysnailboy.mods.moreblocks.init.ModBlocks;
 import net.crazysnailboy.mods.moreblocks.init.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
@@ -67,11 +68,17 @@ public class Recipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[1], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[2], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 3) });
 		
-		
-		
-		
 		addWallRecipe(ModBlocks.stonebrick_wall, Blocks.stonebrick, BlockStoneBrick.EnumType.values());
 		
+		
+		// trapdoors
+		removeVanillaRecipe(Blocks.trapdoor);
+		GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.OAK.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[0], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[1], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.BIRCH.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[2], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[3], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.ACACIA.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[4], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()) });
 		
 	}
 	

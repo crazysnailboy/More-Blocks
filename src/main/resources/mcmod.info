@@ -1,0 +1,14 @@
+[{
+	"modid": "moreblocks",
+	"name": "Chris' More Blocks Mod",
+	"description": "§7Adds a variety of vanilla-based new blocks, including pillars, slabs, stairs, fences, walls and trapdoors.",
+	"version": "§70.2",
+	"mcversion": "§71.8",
+	"credits": "§7Reddit users Jake_Jeremy, Martwaza and Vlakk for textures",
+	"authorList": ["§7crazysnailboy"],
+	"url": "§7https://github.com/crazysnailboy/More-Blocks",
+	"updateUrl": "",
+	"logoFile": "",
+	"screenshots": [],
+	"dependencies": []
+}]

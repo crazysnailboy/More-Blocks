@@ -1,10 +1,10 @@
-package net.crazysnailboy.mods.moreblocks.client.settings;
+package net.crazysnailboy.mods.moreblocks.common.config;
 
 import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
 
-public class ModSettings {
+public class ModConfiguration {
 
 
 	public static boolean useOwnCreativeTab = false;

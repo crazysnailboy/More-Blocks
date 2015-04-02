@@ -1,8 +1,8 @@
 package net.crazysnailboy.mods.moreblocks.creativetab;
 
+import net.crazysnailboy.mods.moreblocks.MoreBlocks;
 import net.crazysnailboy.mods.moreblocks.block.BlockStonePillar;
 import net.crazysnailboy.mods.moreblocks.init.ModBlocks;
-import net.crazysnailboy.mods.moreblocks.init.ModBootstrap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModCreativeTabs {
 
-	public static CreativeTabs tabBlock = new CreativeTabs(ModBootstrap.MOD_ID + "_tabBlock")
+	public static CreativeTabs tabBlock = new CreativeTabs(MoreBlocks.MOD_ID + "_tabBlock")
 	{
 		public Item getTabIconItem()
 		{

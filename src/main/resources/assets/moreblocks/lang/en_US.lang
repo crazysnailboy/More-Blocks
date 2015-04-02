@@ -4,6 +4,8 @@ language.code=en_US
 
 itemGroup.moreblocks_tabBlock=Chris' More Blocks Mod
 
+
+
 item.nether_stick.name=Nether Rod
 
 tile.andesite_column.name=Andesite Pillar
@@ -79,9 +81,18 @@ tile.smooth_red_sandstone_wall.name=Smooth Red Sandstone Wall
 tile.smooth_sandstone_wall.name=Smooth Sandstone Wall
 
 tile.smooth_stone.name=Polished Stone
+tile.stoneSlab.name=Polished Stone Slab
+tile.stoneSlab.stone.name=Polished Stone Slab
 
 tile.stone_slab.name=Stone Slab
 tile.stone_stairs.name=Stone Stairs
 tile.stone_wall.name=Stone Wall
 
 tile.stonebrick_wall.name=Stone Brick Wall
+
+tile.trapdoor.name=Oak Trapdoor
+tile.spruce_trapdoor.name=Spruce Trapdoor
+tile.birch_trapdoor.name=Birch Trapdoor
+tile.jungle_trapdoor.name=Jungle Trapdoor
+tile.dark_oak_trapdoor.name=Dark Oak Trapdoor
+tile.acacia_trapdoor.name=Acacia Trapdoor

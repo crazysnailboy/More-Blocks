@@ -227,8 +227,6 @@ public class BlockStonePillar extends BlockRotatedPillar {
       private final String name;
       private final String unlocalizedName;
 
-      private static final String __OBFID = "CL_00002058";
-
       private EnumType(int meta, String name)
       {
           this(meta, name, name);

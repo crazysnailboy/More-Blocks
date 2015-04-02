@@ -1,5 +1,6 @@
 package net.crazysnailboy.mods.moreblocks.init;
 
+import net.crazysnailboy.mods.moreblocks.MoreBlocks;
 import net.crazysnailboy.mods.moreblocks.block.BlockDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockFenceGate;
 import net.crazysnailboy.mods.moreblocks.block.BlockHalfSlab;
@@ -16,8 +17,9 @@ import net.crazysnailboy.mods.moreblocks.block.BlockStoneDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockStoneHalfSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockStonePillar;
 import net.crazysnailboy.mods.moreblocks.block.BlockStoneWall;
+import net.crazysnailboy.mods.moreblocks.block.BlockTrapDoor;
 import net.crazysnailboy.mods.moreblocks.block.BlockWall;
-import net.crazysnailboy.mods.moreblocks.client.settings.ModSettings;
+import net.crazysnailboy.mods.moreblocks.common.config.ModConfiguration;
 import net.crazysnailboy.mods.moreblocks.creativetab.ModCreativeTabs;
 import net.crazysnailboy.mods.moreblocks.item.ItemBlockPrismarineWall;
 import net.crazysnailboy.mods.moreblocks.item.ItemBlockSandStoneWall;
@@ -42,6 +44,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
@@ -74,18 +77,20 @@ public class ModBlocks {
 	public static Block[] stonebrick_stairs;
 	public static Block stonebrick_wall;
 	
+	public static Block[] wooden_trapdoor;
 	
 
 	
 	public static void initializeBlocks()
 	{	
-		CreativeTabs tabBlock = (ModSettings.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabBlock);
+		CreativeTabs tabBlock = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabBlock);
+		CreativeTabs tabRedstone = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
 
 		// brick
 		brick_wall = new BlockWall(Blocks.brick_block).setUnlocalizedName("brick_wall").setCreativeTab(tabBlock);
 		
 		// nether brick
-		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(ModSettings.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
+		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
 		nether_brick_wall = new BlockWall(Blocks.nether_brick).setUnlocalizedName("nether_brick_wall").setCreativeTab(tabBlock);
 
 		// obsidian
@@ -132,6 +137,21 @@ public class ModBlocks {
 			new BlockStairs(Blocks.stonebrick).setUnlocalizedName("chiseled_stonebrick_stairs").setCreativeTab(tabBlock)
 		};
 		stonebrick_wall = new BlockStoneBrickWall().setUnlocalizedName("stonebrick_wall").setCreativeTab(tabBlock);
+		
+		// trapdoors
+		wooden_trapdoor = new Block[] { 
+				
+			new BlockTrapDoor(Material.wood).setUnlocalizedName("spruce_trapdoor").setCreativeTab(tabRedstone),
+			new BlockTrapDoor(Material.wood).setUnlocalizedName("birch_trapdoor").setCreativeTab(tabRedstone),
+			new BlockTrapDoor(Material.wood).setUnlocalizedName("jungle_trapdoor").setCreativeTab(tabRedstone),
+			new BlockTrapDoor(Material.wood).setUnlocalizedName("acacia_trapdoor").setCreativeTab(tabRedstone),
+			new BlockTrapDoor(Material.wood).setUnlocalizedName("dark_oak_trapdoor").setCreativeTab(tabRedstone)
+				
+		};
+		
+		
+		//LanguageRegistry.instance().addStringLocalization(Blocks.trapdoor, "en_US", "Oak Trapdoor");
+		
 	}
 
 	
@@ -170,8 +190,9 @@ public class ModBlocks {
 		registerSlabs(stonebrick_slab, stonebrick_double_slab, ItemStoneBrickSlab.class, BlockStoneBrick.EnumType.values());
 		registerBlocks(stonebrick_stairs);
 		registerBlocks(stonebrick_wall, ItemBlockStoneBrickWall.class, BlockStoneBrick.EnumType.values());
-		
-		
+
+		// trapdoors
+		registerBlocks(wooden_trapdoor);
 	}
 	
 	public static void registerRenders()
@@ -207,6 +228,10 @@ public class ModBlocks {
 		registerInventoryModels(stonebrick_slab, BlockStoneBrick.EnumType.values());
 		registerInventoryModels(stonebrick_stairs);
 		registerInventoryModels(stonebrick_wall, BlockStoneBrick.EnumType.values());
+
+		// trapdoors
+		registerInventoryModels(wooden_trapdoor);
+	
 	}	
 	
 	
@@ -223,7 +248,7 @@ public class ModBlocks {
 	    for (int i = 0; i < variants.length ; i++) 
 	    {
 	    	int meta = variants[i].ordinal();
-	    	String unLocalizedName = ModBootstrap.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
+	    	String unLocalizedName = MoreBlocks.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
 	        ModelBakery.addVariantName(item, unLocalizedName);
         }
 	}
@@ -249,9 +274,9 @@ public class ModBlocks {
 	    for (int i = 0; i < variants.length ; i++) 
 	    {
 	    	int meta = variants[i].ordinal();
-	    	String unLocalizedName = ModBootstrap.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
-			System.out.println("variant: " + unLocalizedName);
-	        ModelBakery.addVariantName(item, unLocalizedName);
+	    	String unlocalizedName = MoreBlocks.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
+			System.out.println("variant: " + unlocalizedName);
+	        ModelBakery.addVariantName(item, unlocalizedName);
 	    	
         }
 		
@@ -280,7 +305,7 @@ public class ModBlocks {
 	private static void registerInventoryModel(Block block)
 	{	
 		Item item = Item.getItemFromBlock(block);
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModBootstrap.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(MoreBlocks.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
 
 	private static void registerInventoryModels(Block block, Enum[] variants)
@@ -289,7 +314,7 @@ public class ModBlocks {
 	    for (int i = 0; i < variants.length ; i++) 
 	    {
 	    	int meta = variants[i].ordinal();
-	    	String unLocalizedName = ModBootstrap.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
+	    	String unLocalizedName = MoreBlocks.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(unLocalizedName, "inventory"));
         }		
 	}

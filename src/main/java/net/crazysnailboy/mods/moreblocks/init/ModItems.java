@@ -1,6 +1,7 @@
 package net.crazysnailboy.mods.moreblocks.init;
 
-import net.crazysnailboy.mods.moreblocks.client.settings.ModSettings;
+import net.crazysnailboy.mods.moreblocks.MoreBlocks;
+import net.crazysnailboy.mods.moreblocks.common.config.ModConfiguration;
 import net.crazysnailboy.mods.moreblocks.creativetab.ModCreativeTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -16,7 +17,7 @@ public class ModItems {
 	
 	public static void initializeItems()
 	{
-		nether_stick = new Item().setFull3D().setUnlocalizedName("nether_stick").setCreativeTab(ModSettings.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabMaterials);
+		nether_stick = new Item().setFull3D().setUnlocalizedName("nether_stick").setCreativeTab(ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabMaterials);
 	}
 	
 	public static void registerItems()
@@ -36,7 +37,7 @@ public class ModItems {
 	
 	private static void registerRender(Item item)
 	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModBootstrap.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(MoreBlocks.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
 	
 	
