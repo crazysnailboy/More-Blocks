@@ -1,5 +1,5 @@
 {
-    "parent": "moreblocks:block/smooth_stone",
+    "parent": "moreblocks:block/double_smooth_stone",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

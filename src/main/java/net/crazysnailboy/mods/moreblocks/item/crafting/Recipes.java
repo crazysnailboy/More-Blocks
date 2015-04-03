@@ -9,8 +9,10 @@ import net.crazysnailboy.mods.moreblocks.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -23,53 +25,63 @@ public class Recipes {
 	public static void addCraftingRecipes()
 	{	
 		
-		// brick
-		addWallRecipe(ModBlocks.brick_wall, Blocks.brick_block);
 		
-		// nether brick
+		// double stone slabs
+		// sandstone
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.double_smooth_sandstone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.sandstone, 1, BlockSandStone.EnumType.SMOOTH.getMetadata()) });
+		// stone
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.double_smooth_stone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.STONE.getMetadata()) });
+
+		// fences and fence gates
+		// nether rods
 		GameRegistry.addRecipe(new ItemStack(ModItems.nether_stick, 4), new Object[] {"#", "#", '#', Blocks.nether_brick});
+		// nether brick fences and fence gates
 		removeVanillaRecipe(Blocks.nether_brick_fence);
 		GameRegistry.addRecipe(new ItemStack(Blocks.nether_brick_fence, 3), new Object[] { "W#W", "W#W", '#', ModItems.nether_stick, 'W', Blocks.nether_brick });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.nether_brick_fence_gate, 1), new Object[] { "#W#", "#W#", '#', ModItems.nether_stick, 'W', Blocks.nether_brick });
-		addWallRecipe(ModBlocks.nether_brick_wall, Blocks.nether_brick);
 
-		// obsidian
-		addSlabRecipe(ModBlocks.obsidian_slab, Blocks.obsidian);
-		addStairsRecipe(ModBlocks.obsidian_stairs, Blocks.obsidian);
-		addWallRecipe(ModBlocks.obsidian_wall, Blocks.obsidian);
-
-		// prismarine
-		addSlabRecipes(ModBlocks.prismarine_slab, Blocks.prismarine, BlockPrismarine.EnumType.values());
-		addStairsRecipes(ModBlocks.prismarine_stairs, Blocks.prismarine);
-		addWallRecipe(ModBlocks.prismarine_wall, Blocks.prismarine, BlockPrismarine.EnumType.values());
-		
-		// stone
-		removeVanillaRecipe(Blocks.stone_slab);
-		addSquareRecipe(new ItemStack(ModBlocks.smooth_stone, 4), new ItemStack(Blocks.stone, 1, 0));
-		addSlabRecipe(Blocks.stone_slab, ModBlocks.smooth_stone);
-		addSlabRecipes(ModBlocks.stone_slab, Blocks.stone, BlockStone.EnumType.values());
+		// pillars
+		// granite, diorite and andesite
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stone_pillar, 2, BlockStonePillar.EnumType.GRANITE.getMetadata()), new Object[] { "#", "#", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata()) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stone_pillar, 2, BlockStonePillar.EnumType.DIORITE.getMetadata()), new Object[] { "#", "#", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata()) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stone_pillar, 2, BlockStonePillar.EnumType.ANDESITE.getMetadata()), new Object[] { "#", "#", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata()) });
-		addStairsRecipes(ModBlocks.stone_stairs, Blocks.stone);
-		addWallRecipe(ModBlocks.stone_wall, Blocks.stone, BlockStone.EnumType.values());		
-		
-		// stonebrick
-		
-		//addSlabRecipes(ModBlocks.stonebrick_slab, Blocks.stonebrick, BlockStoneBrick.EnumType.values());
-		GameRegistry.addRecipe(new ItemStack(Blocks.stone_slab, 6, 5), new Object[] {"###", '#', new ItemStack(Blocks.stonebrick, 1, 0) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 1), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, 1) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 2), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, 2) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 3), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, 3) });
 
+		// slabs
+		// obsidian
+		addSlabRecipe(ModBlocks.obsidian_slab, Blocks.obsidian);
+		// prismarine
+		addSlabRecipes(ModBlocks.prismarine_slab, Blocks.prismarine, BlockPrismarine.EnumType.values());
+		// stone
+		removeVanillaRecipe(Blocks.stone_slab);
+		addSlabRecipe(Blocks.stone_slab, ModBlocks.double_smooth_stone);
+		addSlabRecipes(ModBlocks.stone_slab, Blocks.stone, BlockStone.EnumType.values());
+		// stone brick
+		GameRegistry.addRecipe(new ItemStack(Blocks.stone_slab, 6, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new Object[] {"###", '#', new ItemStack(Blocks.stonebrick, 1, BlockStoneBrick.EnumType.DEFAULT.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 1), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, BlockStoneBrick.EnumType.MOSSY.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 2), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, BlockStoneBrick.EnumType.CRACKED.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_slab, 6, 3), new Object[] { "###", '#', new ItemStack(Blocks.stonebrick, 1, BlockStoneBrick.EnumType.CHISELED.getMetadata()) });
+
+		// stairs
+		// obsidian
+		addStairsRecipe(ModBlocks.obsidian_stairs, Blocks.obsidian);
+		// prismarine
+		addStairsRecipes(ModBlocks.prismarine_stairs, Blocks.prismarine);
+		// stone
+		addStairsRecipes(ModBlocks.stone_stairs, Blocks.stone);
+		// stone brick
 		removeVanillaRecipe(Blocks.stone_brick_stairs);
 		GameRegistry.addRecipe(new ItemStack(Blocks.stone_brick_stairs, 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 0) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[0], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 1) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[1], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[2], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 3) });
 		
+		// walls
+		addWallRecipe(ModBlocks.brick_wall, Blocks.brick_block);
+		addWallRecipe(ModBlocks.nether_brick_wall, Blocks.nether_brick);
+		addWallRecipe(ModBlocks.obsidian_wall, Blocks.obsidian);
+		addWallRecipe(ModBlocks.prismarine_wall, Blocks.prismarine, BlockPrismarine.EnumType.values());
+		addWallRecipe(ModBlocks.stone_wall, Blocks.stone, BlockStone.EnumType.values());		
 		addWallRecipe(ModBlocks.stonebrick_wall, Blocks.stonebrick, BlockStoneBrick.EnumType.values());
-		
 		
 		// trapdoors
 		removeVanillaRecipe(Blocks.trapdoor);

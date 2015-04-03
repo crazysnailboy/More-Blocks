@@ -48,6 +48,11 @@ import net.minecraftforge.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
+	// double smooth stone slabs
+	public static Block double_smooth_sandstone;
+	public static Block double_smooth_stone;
+	
+	
 	public static Block brick_wall;
 	
 	public static Block nether_brick_fence_gate;
@@ -65,7 +70,6 @@ public class ModBlocks {
 
 	public static Block sandstone_wall;
 	
-	public static Block smooth_stone;
 	public static Block stone_slab;
 	public static Block stone_double_slab;
 	public static Block[] stone_stairs;
@@ -86,6 +90,12 @@ public class ModBlocks {
 		CreativeTabs tabBlock = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabBlock);
 		CreativeTabs tabRedstone = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
 
+		// double smooth stone
+		double_smooth_sandstone = new BlockSmoothStone().setUnlocalizedName("double_smooth_sandstone").setCreativeTab(tabBlock);
+		double_smooth_stone = new BlockSmoothStone().setUnlocalizedName("double_smooth_stone").setCreativeTab(tabBlock);
+		
+		
+		
 		// brick
 		brick_wall = new BlockWall(Blocks.brick_block).setUnlocalizedName("brick_wall").setCreativeTab(tabBlock);
 		
@@ -113,7 +123,6 @@ public class ModBlocks {
 		sandstone_wall = new BlockSandStoneWall().setUnlocalizedName("sandstone_wall").setCreativeTab(tabBlock);
 		
 		// stone
-		smooth_stone = new BlockSmoothStone().setUnlocalizedName("smooth_stone").setCreativeTab(tabBlock);
 		stone_slab = new BlockStoneHalfSlab().setUnlocalizedName("stone_slab").setCreativeTab(tabBlock);
 		stone_double_slab = new BlockStoneDoubleSlab().setUnlocalizedName("stone_double_slab");
 		stone_pillar = new BlockStonePillar().setUnlocalizedName("stone_column").setCreativeTab(tabBlock);
@@ -159,6 +168,12 @@ public class ModBlocks {
 	public static void registerBlocks()
 	{
 		
+		
+		registerBlock(double_smooth_sandstone);
+		registerBlock(double_smooth_stone);
+		
+		
+		
 		// brick
 		registerBlock(brick_wall);
 
@@ -180,7 +195,6 @@ public class ModBlocks {
 		registerBlocks(sandstone_wall, ItemBlockSandStoneWall.class, BlockSandStoneWall.EnumType.values());
 		
 		// stone
-		registerBlock(smooth_stone);
 		registerSlabs(stone_slab, stone_double_slab, ItemStoneSlab.class, BlockStone.EnumType.values());
 		registerBlocks(stone_pillar, ItemBlockStonePillar.class, BlockStonePillar.EnumType.values());
 		registerBlocks(stone_stairs);
@@ -197,6 +211,12 @@ public class ModBlocks {
 	
 	public static void registerRenders()
 	{	
+		
+		
+		registerInventoryModel(double_smooth_sandstone);
+		registerInventoryModel(double_smooth_stone);
+		
+		
 		// brick
 		registerInventoryModel(brick_wall);
 		
@@ -218,7 +238,6 @@ public class ModBlocks {
 		registerInventoryModels(sandstone_wall, BlockSandStoneWall.EnumType.values());
 
 		// stone
-		registerInventoryModel(smooth_stone);
 		registerInventoryModels(stone_slab, BlockStone.EnumType.values());
 		registerInventoryModels(stone_pillar, BlockStonePillar.EnumType.values());
 		registerInventoryModels(stone_stairs);
@@ -275,7 +294,7 @@ public class ModBlocks {
 	    {
 	    	int meta = variants[i].ordinal();
 	    	String unlocalizedName = MoreBlocks.MOD_ID + ":" + new ItemStack(item, 1, meta).getUnlocalizedName().substring(5);
-			System.out.println("variant: " + unlocalizedName);
+			//System.out.println("variant: " + unlocalizedName);
 	        ModelBakery.addVariantName(item, unlocalizedName);
 	    	
         }
