@@ -1,0 +1,6 @@
+{ 
+    "variants": { 
+        "powered=false": { "model": "moreblocks:dark_oak_pressure_plate_up" }, 
+        "powered=true": { "model": "moreblocks:dark_oak_pressure_plate_down" } 
+    } 
+} 

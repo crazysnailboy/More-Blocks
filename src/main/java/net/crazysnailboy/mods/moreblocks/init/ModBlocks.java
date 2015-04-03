@@ -4,6 +4,7 @@ import net.crazysnailboy.mods.moreblocks.MoreBlocks;
 import net.crazysnailboy.mods.moreblocks.block.BlockDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockFenceGate;
 import net.crazysnailboy.mods.moreblocks.block.BlockHalfSlab;
+import net.crazysnailboy.mods.moreblocks.block.BlockPressurePlate;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineHalfSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineWall;
@@ -44,7 +45,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
@@ -52,37 +52,45 @@ public class ModBlocks {
 	public static Block double_smooth_sandstone;
 	public static Block double_smooth_stone;
 	
-	
-	public static Block brick_wall;
-	
+	// fences and fence gates
 	public static Block nether_brick_fence_gate;
-	public static Block nether_brick_wall;
-
-	public static Block obsidian_slab;
-	public static Block obsidian_double_slab;
-	public static Block obsidian_stairs;
-	public static Block obsidian_wall;
-
-	public static Block prismarine_slab;
-	public static Block prismarine_double_slab;
-	public static Block[] prismarine_stairs;
-	public static Block prismarine_wall;
-
-	public static Block sandstone_wall;
 	
-	public static Block stone_slab;
-	public static Block stone_double_slab;
-	public static Block[] stone_stairs;
+	// pillars
 	public static Block stone_pillar;
-	public static Block stone_wall;
-		
-	public static Block stonebrick_slab;
+
+	// pressure plates
+	public static Block[] wooden_pressure_plate;
+
+	// slabs
+	public static Block obsidian_slab; 
+	public static Block obsidian_double_slab;
+	public static Block prismarine_slab; 
+	public static Block prismarine_double_slab;
+	public static Block stone_slab; 
+	public static Block stone_double_slab;
+	public static Block stonebrick_slab; 
 	public static Block stonebrick_double_slab;
+
+	// stairs
+	public static Block obsidian_stairs;
+	public static Block[] prismarine_stairs;
+	public static Block[] stone_stairs;
 	public static Block[] stonebrick_stairs;
-	public static Block stonebrick_wall;
-	
+
+	// trapdoors
 	public static Block[] wooden_trapdoor;
+
+	// walls
+	public static Block brick_wall;
+	public static Block nether_brick_wall;
+	public static Block obsidian_wall;
+	public static Block prismarine_wall;
+	public static Block sandstone_wall;
+	public static Block stone_wall;
+	public static Block stonebrick_wall;
+
 	
+
 
 	
 	public static void initializeBlocks()
@@ -93,39 +101,39 @@ public class ModBlocks {
 		// double smooth stone
 		double_smooth_sandstone = new BlockSmoothStone().setUnlocalizedName("double_smooth_sandstone").setCreativeTab(tabBlock);
 		double_smooth_stone = new BlockSmoothStone().setUnlocalizedName("double_smooth_stone").setCreativeTab(tabBlock);
-		
-		
-		
-		// brick
-		brick_wall = new BlockWall(Blocks.brick_block).setUnlocalizedName("brick_wall").setCreativeTab(tabBlock);
-		
-		// nether brick
-		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
-		nether_brick_wall = new BlockWall(Blocks.nether_brick).setUnlocalizedName("nether_brick_wall").setCreativeTab(tabBlock);
 
-		// obsidian
+		// fences and fence gates
+		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
+
+		// pillars
+		stone_pillar = new BlockStonePillar().setUnlocalizedName("stone_column").setCreativeTab(tabBlock);
+
+		// pressure plates
+		wooden_pressure_plate = new Block[] {
+			new BlockPressurePlate(Material.wood, BlockPressurePlate.Sensitivity.EVERYTHING).setUnlocalizedName("spruce_pressure_plate").setCreativeTab(tabRedstone),
+			new BlockPressurePlate(Material.wood, BlockPressurePlate.Sensitivity.EVERYTHING).setUnlocalizedName("birch_pressure_plate").setCreativeTab(tabRedstone),
+			new BlockPressurePlate(Material.wood, BlockPressurePlate.Sensitivity.EVERYTHING).setUnlocalizedName("jungle_pressure_plate").setCreativeTab(tabRedstone),
+			new BlockPressurePlate(Material.wood, BlockPressurePlate.Sensitivity.EVERYTHING).setUnlocalizedName("acacia_pressure_plate").setCreativeTab(tabRedstone),
+			new BlockPressurePlate(Material.wood, BlockPressurePlate.Sensitivity.EVERYTHING).setUnlocalizedName("dark_oak_pressure_plate").setCreativeTab(tabRedstone)
+		};
+		
+		// slabs
 		obsidian_slab = new BlockHalfSlab(Material.rock).setHardness(50.0F).setResistance(2000.0F).setStepSound(Block.soundTypePiston).setUnlocalizedName("obsidian_slab").setCreativeTab(tabBlock);
 		obsidian_double_slab = new BlockDoubleSlab(Material.rock).setHardness(50.0F).setResistance(2000.0F).setStepSound(Block.soundTypePiston).setUnlocalizedName("obsidian_double_slab");
-		obsidian_stairs = new BlockStairs(Blocks.obsidian).setUnlocalizedName("obsidian_stairs").setCreativeTab(tabBlock);
-		obsidian_wall = new BlockWall(Blocks.obsidian).setUnlocalizedName("obsidian_wall").setCreativeTab(tabBlock);
-		
-		// prismarine
 		prismarine_slab = new BlockPrismarineHalfSlab().setUnlocalizedName("prismarine_slab").setCreativeTab(tabBlock);
 		prismarine_double_slab = new BlockPrismarineDoubleSlab().setUnlocalizedName("prismarine_double_slab");
+		stone_slab = new BlockStoneHalfSlab().setUnlocalizedName("stone_slab").setCreativeTab(tabBlock);
+		stone_double_slab = new BlockStoneDoubleSlab().setUnlocalizedName("stone_double_slab");
+		stonebrick_slab = new BlockStoneBrickHalfSlab().setUnlocalizedName("stonebrick_slab").setCreativeTab(tabBlock);
+		stonebrick_double_slab = new BlockStoneBrickDoubleSlab().setUnlocalizedName("stonebrick_double_slab");
+
+		// stairs
+		obsidian_stairs = new BlockStairs(Blocks.obsidian).setUnlocalizedName("obsidian_stairs").setCreativeTab(tabBlock);
 		prismarine_stairs = new Block[] {
 			new BlockStairs(Blocks.prismarine).setUnlocalizedName("prismarine_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.prismarine).setUnlocalizedName("prismarine_bricks_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.prismarine).setUnlocalizedName("dark_prismarine_stairs").setCreativeTab(tabBlock)
 		};
-		prismarine_wall = new BlockPrismarineWall().setUnlocalizedName("prismarine_wall").setCreativeTab(tabBlock);
-
-		// sandstone
-		sandstone_wall = new BlockSandStoneWall().setUnlocalizedName("sandstone_wall").setCreativeTab(tabBlock);
-		
-		// stone
-		stone_slab = new BlockStoneHalfSlab().setUnlocalizedName("stone_slab").setCreativeTab(tabBlock);
-		stone_double_slab = new BlockStoneDoubleSlab().setUnlocalizedName("stone_double_slab");
-		stone_pillar = new BlockStonePillar().setUnlocalizedName("stone_column").setCreativeTab(tabBlock);
 		stone_stairs = new Block[] {
 			new BlockStairs(Blocks.stone).setUnlocalizedName("stone_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.stone).setUnlocalizedName("granite_stairs").setCreativeTab(tabBlock),
@@ -135,31 +143,29 @@ public class ModBlocks {
 			new BlockStairs(Blocks.stone).setUnlocalizedName("andesite_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.stone).setUnlocalizedName("smooth_andesite_stairs").setCreativeTab(tabBlock)
 		};
-		stone_wall = new BlockStoneWall().setUnlocalizedName("stone_wall").setCreativeTab(tabBlock);
-
-		// stonebrick
-		stonebrick_slab = new BlockStoneBrickHalfSlab().setUnlocalizedName("stonebrick_slab").setCreativeTab(tabBlock);
-		stonebrick_double_slab = new BlockStoneBrickDoubleSlab().setUnlocalizedName("stonebrick_double_slab");
 		stonebrick_stairs = new Block[] {
 			new BlockStairs(Blocks.stonebrick).setUnlocalizedName("mossy_stonebrick_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.stonebrick).setUnlocalizedName("cracked_stonebrick_stairs").setCreativeTab(tabBlock),
 			new BlockStairs(Blocks.stonebrick).setUnlocalizedName("chiseled_stonebrick_stairs").setCreativeTab(tabBlock)
 		};
-		stonebrick_wall = new BlockStoneBrickWall().setUnlocalizedName("stonebrick_wall").setCreativeTab(tabBlock);
-		
+
 		// trapdoors
 		wooden_trapdoor = new Block[] { 
-				
 			new BlockTrapDoor(Material.wood).setUnlocalizedName("spruce_trapdoor").setCreativeTab(tabRedstone),
 			new BlockTrapDoor(Material.wood).setUnlocalizedName("birch_trapdoor").setCreativeTab(tabRedstone),
 			new BlockTrapDoor(Material.wood).setUnlocalizedName("jungle_trapdoor").setCreativeTab(tabRedstone),
 			new BlockTrapDoor(Material.wood).setUnlocalizedName("acacia_trapdoor").setCreativeTab(tabRedstone),
 			new BlockTrapDoor(Material.wood).setUnlocalizedName("dark_oak_trapdoor").setCreativeTab(tabRedstone)
-				
 		};
 		
-		
-		//LanguageRegistry.instance().addStringLocalization(Blocks.trapdoor, "en_US", "Oak Trapdoor");
+		// walls
+		brick_wall = new BlockWall(Blocks.brick_block).setUnlocalizedName("brick_wall").setCreativeTab(tabBlock);
+		nether_brick_wall = new BlockWall(Blocks.nether_brick).setUnlocalizedName("nether_brick_wall").setCreativeTab(tabBlock);
+		obsidian_wall = new BlockWall(Blocks.obsidian).setUnlocalizedName("obsidian_wall").setCreativeTab(tabBlock);
+		prismarine_wall = new BlockPrismarineWall().setUnlocalizedName("prismarine_wall").setCreativeTab(tabBlock);
+		sandstone_wall = new BlockSandStoneWall().setUnlocalizedName("sandstone_wall").setCreativeTab(tabBlock);
+		stone_wall = new BlockStoneWall().setUnlocalizedName("stone_wall").setCreativeTab(tabBlock);
+		stonebrick_wall = new BlockStoneBrickWall().setUnlocalizedName("stonebrick_wall").setCreativeTab(tabBlock);
 		
 	}
 
@@ -167,89 +173,84 @@ public class ModBlocks {
 	
 	public static void registerBlocks()
 	{
-		
-		
+
+		// double smooth stone
 		registerBlock(double_smooth_sandstone);
 		registerBlock(double_smooth_stone);
 		
-		
-		
-		// brick
-		registerBlock(brick_wall);
-
-		// nether brick
+		// fences and fence gates
 		registerBlock(nether_brick_fence_gate);
-		registerBlock(nether_brick_wall);
 
-		// obsidian
-		registerSlab(obsidian_slab, obsidian_double_slab, ItemSlab.class);
-        registerBlock(obsidian_stairs);
-		registerBlock(obsidian_wall);
-
-		// prismarine
-		registerSlabs(prismarine_slab, prismarine_double_slab, ItemPrismarineSlab.class, BlockPrismarine.EnumType.values());
-		registerBlocks(prismarine_stairs);
-		registerBlocks(prismarine_wall, ItemBlockPrismarineWall.class, BlockPrismarine.EnumType.values());
-
-		// sandstone
-		registerBlocks(sandstone_wall, ItemBlockSandStoneWall.class, BlockSandStoneWall.EnumType.values());
-		
-		// stone
-		registerSlabs(stone_slab, stone_double_slab, ItemStoneSlab.class, BlockStone.EnumType.values());
+		// pillars
 		registerBlocks(stone_pillar, ItemBlockStonePillar.class, BlockStonePillar.EnumType.values());
-		registerBlocks(stone_stairs);
-		registerBlocks(stone_wall, ItemBlockStoneWall.class, BlockStone.EnumType.values());
-
-		// stonebrick
+		
+		// slabs
+		registerSlab(obsidian_slab, obsidian_double_slab, ItemSlab.class);
+		registerSlabs(prismarine_slab, prismarine_double_slab, ItemPrismarineSlab.class, BlockPrismarine.EnumType.values());
+		registerSlabs(stone_slab, stone_double_slab, ItemStoneSlab.class, BlockStone.EnumType.values());
 		registerSlabs(stonebrick_slab, stonebrick_double_slab, ItemStoneBrickSlab.class, BlockStoneBrick.EnumType.values());
+		
+		// stairs
+        registerBlock(obsidian_stairs);
+		registerBlocks(prismarine_stairs);
+		registerBlocks(stone_stairs);
 		registerBlocks(stonebrick_stairs);
+		
+		// walls
+		registerBlock(brick_wall);
+		registerBlock(nether_brick_wall);
+		registerBlock(obsidian_wall);
+		registerBlocks(prismarine_wall, ItemBlockPrismarineWall.class, BlockPrismarine.EnumType.values());
+		registerBlocks(sandstone_wall, ItemBlockSandStoneWall.class, BlockSandStoneWall.EnumType.values());
+		registerBlocks(stone_wall, ItemBlockStoneWall.class, BlockStone.EnumType.values());
 		registerBlocks(stonebrick_wall, ItemBlockStoneBrickWall.class, BlockStoneBrick.EnumType.values());
 
 		// trapdoors
 		registerBlocks(wooden_trapdoor);
+		
+		// pressure plates
+		registerBlocks(wooden_pressure_plate);
 	}
 	
 	public static void registerRenders()
 	{	
-		
-		
+		// double smooth stone
 		registerInventoryModel(double_smooth_sandstone);
 		registerInventoryModel(double_smooth_stone);
-		
-		
-		// brick
-		registerInventoryModel(brick_wall);
-		
-		// nether brick
+
+		// fences and fence gates
 		registerInventoryModel(nether_brick_fence_gate);
-		registerInventoryModel(nether_brick_wall);
-
-		// obsidian
-		registerInventoryModel(obsidian_slab);
-		registerInventoryModel(obsidian_stairs);
-		registerInventoryModel(obsidian_wall);
-				
-		// prismarine
-		registerInventoryModels(prismarine_slab, BlockPrismarine.EnumType.values());
-		registerInventoryModels(prismarine_stairs);
-		registerInventoryModels(prismarine_wall, BlockPrismarine.EnumType.values());
-
-		// sandstone
-		registerInventoryModels(sandstone_wall, BlockSandStoneWall.EnumType.values());
-
-		// stone
-		registerInventoryModels(stone_slab, BlockStone.EnumType.values());
-		registerInventoryModels(stone_pillar, BlockStonePillar.EnumType.values());
-		registerInventoryModels(stone_stairs);
-		registerInventoryModels(stone_wall, BlockStone.EnumType.values());
 		
-		// stonebrick
+		// pillars
+		registerInventoryModels(stone_pillar, BlockStonePillar.EnumType.values());
+		
+		// slabs
+		registerInventoryModel(obsidian_slab);
+		registerInventoryModels(prismarine_slab, BlockPrismarine.EnumType.values());
+		registerInventoryModels(stone_slab, BlockStone.EnumType.values());
 		registerInventoryModels(stonebrick_slab, BlockStoneBrick.EnumType.values());
+		
+		// stairs
+		registerInventoryModel(obsidian_stairs);
+		registerInventoryModels(prismarine_stairs);
+		registerInventoryModels(stone_stairs);
 		registerInventoryModels(stonebrick_stairs);
+		
+		// walls
+		registerInventoryModel(brick_wall);
+		registerInventoryModel(nether_brick_wall);
+		registerInventoryModel(obsidian_wall);
+		registerInventoryModels(prismarine_wall, BlockPrismarine.EnumType.values());
+		registerInventoryModels(sandstone_wall, BlockSandStoneWall.EnumType.values());
+		registerInventoryModels(stone_wall, BlockStone.EnumType.values());
 		registerInventoryModels(stonebrick_wall, BlockStoneBrick.EnumType.values());
 
 		// trapdoors
 		registerInventoryModels(wooden_trapdoor);
+		
+		// pressure plates
+		registerInventoryModels(wooden_pressure_plate);
+		
 	
 	}	
 	

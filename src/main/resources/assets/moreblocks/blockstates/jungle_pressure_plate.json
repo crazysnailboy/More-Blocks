@@ -1,0 +1,6 @@
+{ 
+    "variants": { 
+        "powered=false": { "model": "moreblocks:jungle_pressure_plate_up" }, 
+        "powered=true": { "model": "moreblocks:jungle_pressure_plate_down" } 
+    } 
+} 

@@ -1,0 +1,6 @@
+{ 
+    "variants": { 
+        "powered=false": { "model": "moreblocks:birch_pressure_plate_up" }, 
+        "powered=true": { "model": "moreblocks:birch_pressure_plate_down" } 
+    } 
+} 

@@ -46,6 +46,17 @@ public class Recipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stone_pillar, 2, BlockStonePillar.EnumType.DIORITE.getMetadata()), new Object[] { "#", "#", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata()) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stone_pillar, 2, BlockStonePillar.EnumType.ANDESITE.getMetadata()), new Object[] { "#", "#", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata()) });
 
+		// pressure_plates
+		// wood variants
+		removeVanillaRecipe(Blocks.wooden_pressure_plate);
+		GameRegistry.addRecipe(new ItemStack(Blocks.wooden_pressure_plate, 1), new Object[] {"##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.OAK.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_pressure_plate[0], 1), new Object[] { "##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_pressure_plate[1], 1), new Object[] { "##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.BIRCH.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_pressure_plate[2], 1), new Object[] { "##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_pressure_plate[3], 1), new Object[] { "##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.ACACIA.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_pressure_plate[4], 1), new Object[] { "##", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()) });
+		
+		
 		// slabs
 		// obsidian
 		addSlabRecipe(ModBlocks.obsidian_slab, Blocks.obsidian);
@@ -74,6 +85,16 @@ public class Recipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[0], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 1) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[1], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.stonebrick_stairs[2], 4, 0), new Object[] { "#  ", "## ", "###", '#', new ItemStack(Blocks.stonebrick, 1, 3) });
+
+		// trapdoors
+		// wood variants
+		removeVanillaRecipe(Blocks.trapdoor);
+		GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.OAK.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[0], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[1], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.BIRCH.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[2], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[3], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.ACACIA.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[4], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()) });
 		
 		// walls
 		addWallRecipe(ModBlocks.brick_wall, Blocks.brick_block);
@@ -82,15 +103,6 @@ public class Recipes {
 		addWallRecipe(ModBlocks.prismarine_wall, Blocks.prismarine, BlockPrismarine.EnumType.values());
 		addWallRecipe(ModBlocks.stone_wall, Blocks.stone, BlockStone.EnumType.values());		
 		addWallRecipe(ModBlocks.stonebrick_wall, Blocks.stonebrick, BlockStoneBrick.EnumType.values());
-		
-		// trapdoors
-		removeVanillaRecipe(Blocks.trapdoor);
-		GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.OAK.getMetadata()) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[0], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[1], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.BIRCH.getMetadata()) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[2], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[3], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.ACACIA.getMetadata()) });
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.wooden_trapdoor[4], 2), new Object[] { "###", "###", '#', new ItemStack(Blocks.planks, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()) });
 		
 	}
 	
