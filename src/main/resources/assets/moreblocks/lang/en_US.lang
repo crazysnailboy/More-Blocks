@@ -4,15 +4,28 @@ language.code=en_US
 
 itemGroup.moreblocks_tabBlock=Chris' More Blocks Mod
 
+
 ### double smooth stone
 
 tile.double_smooth_sandstone.name=Double Smooth Sandstone
 tile.double_smooth_stone.name=Double Smooth Stone
 
+
 ### fences and fence gates
 
 item.nether_stick.name=Nether Rod
 tile.nether_brick_fence_gate.name=Nether Brick Fence Gate
+
+
+### ladders
+
+tile.spruce_ladder.name=Spruce Ladder
+tile.birch_ladder.name=Birch Ladder
+tile.jungle_ladder.name=Jungle Ladder
+tile.dark_oak_ladder.name=Dark Oak Ladder
+tile.acacia_ladder.name=Acacia Ladder
+
+tile.ladder.name=Oak Ladder
 
 
 ### pillars

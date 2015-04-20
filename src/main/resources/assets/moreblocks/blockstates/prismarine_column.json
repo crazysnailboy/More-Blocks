@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "axis=none":  { "model": "moreblocks:prismarine_lines" },
+        "axis=y":  { "model": "moreblocks:prismarine_lines" },
+        "axis=z":  { "model": "moreblocks:prismarine_lines", "x": 90 },
+        "axis=x":  { "model": "moreblocks:prismarine_lines", "x": 90, "y": 90 }
+    }
+}
+

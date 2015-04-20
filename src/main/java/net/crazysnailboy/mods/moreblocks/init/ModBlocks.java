@@ -4,9 +4,11 @@ import net.crazysnailboy.mods.moreblocks.MoreBlocks;
 import net.crazysnailboy.mods.moreblocks.block.BlockDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockFenceGate;
 import net.crazysnailboy.mods.moreblocks.block.BlockHalfSlab;
+import net.crazysnailboy.mods.moreblocks.block.BlockLadder;
 import net.crazysnailboy.mods.moreblocks.block.BlockPressurePlate;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineHalfSlab;
+import net.crazysnailboy.mods.moreblocks.block.BlockPrismarinePillar;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineWall;
 import net.crazysnailboy.mods.moreblocks.block.BlockSandStoneWall;
 import net.crazysnailboy.mods.moreblocks.block.BlockSmoothStone;
@@ -55,7 +57,11 @@ public class ModBlocks {
 	// fences and fence gates
 	public static Block nether_brick_fence_gate;
 	
+	// ladders
+	public static Block[] ladder;
+	
 	// pillars
+	public static Block prismarine_pillar;
 	public static Block stone_pillar;
 
 	// pressure plates
@@ -97,15 +103,29 @@ public class ModBlocks {
 	{	
 		CreativeTabs tabBlock = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabBlock);
 		CreativeTabs tabRedstone = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
+		CreativeTabs tabDecorations = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabDecorations);
+		
+		
 
 		// double smooth stone
 		double_smooth_sandstone = new BlockSmoothStone().setUnlocalizedName("double_smooth_sandstone").setCreativeTab(tabBlock);
 		double_smooth_stone = new BlockSmoothStone().setUnlocalizedName("double_smooth_stone").setCreativeTab(tabBlock);
 
 		// fences and fence gates
-		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
+		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(tabRedstone);
 
+		// ladders
+		ladder = new Block[] {
+			new BlockLadder().setUnlocalizedName("spruce_ladder").setCreativeTab(tabDecorations),
+			new BlockLadder().setUnlocalizedName("birch_ladder").setCreativeTab(tabDecorations),
+			new BlockLadder().setUnlocalizedName("jungle_ladder").setCreativeTab(tabDecorations),
+			new BlockLadder().setUnlocalizedName("acacia_ladder").setCreativeTab(tabDecorations),
+			new BlockLadder().setUnlocalizedName("dark_oak_ladder").setCreativeTab(tabDecorations)
+		};
+		
+		
 		// pillars
+		prismarine_pillar = new BlockPrismarinePillar().setUnlocalizedName("prismarine_column").setCreativeTab(tabBlock);
 		stone_pillar = new BlockStonePillar().setUnlocalizedName("stone_column").setCreativeTab(tabBlock);
 
 		// pressure plates
@@ -181,7 +201,11 @@ public class ModBlocks {
 		// fences and fence gates
 		registerBlock(nether_brick_fence_gate);
 
+		// ladders
+		registerBlocks(ladder);
+		
 		// pillars
+		registerBlock(prismarine_pillar);
 		registerBlocks(stone_pillar, ItemBlockStonePillar.class, BlockStonePillar.EnumType.values());
 		
 		// slabs
@@ -221,7 +245,11 @@ public class ModBlocks {
 		// fences and fence gates
 		registerInventoryModel(nether_brick_fence_gate);
 		
+		// ladders
+		registerInventoryModels(ladder);
+		
 		// pillars
+		registerInventoryModel(prismarine_pillar);
 		registerInventoryModels(stone_pillar, BlockStonePillar.EnumType.values());
 		
 		// slabs

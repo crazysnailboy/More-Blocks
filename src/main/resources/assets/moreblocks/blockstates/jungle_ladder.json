@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "moreblocks:jungle_ladder" },
+        "facing=east":  { "model": "moreblocks:jungle_ladder", "y": 90 },
+        "facing=south": { "model": "moreblocks:jungle_ladder", "y": 180 },
+        "facing=west":  { "model": "moreblocks:jungle_ladder", "y": 270 }
+    }
+}

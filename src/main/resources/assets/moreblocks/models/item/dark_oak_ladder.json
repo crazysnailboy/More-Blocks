@@ -1,0 +1,6 @@
+{
+    "parent": "item/ladder",
+    "textures": {
+        "layer0": "moreblocks:blocks/ladder_dark_oak"
+    }
+}

@@ -19,7 +19,7 @@ public class MoreBlocks {
 
 	public static final String MOD_ID = "moreblocks";
 	public static final String MOD_NAME = "Chris' More Blocks Mod";
-	public static final String VERSION = "0.1.3";
+	public static final String VERSION = "0.1.4";
 	
 	private static final String CLIENT_PROXY_CLASS = "net.crazysnailboy.mods.moreblocks.proxy.ClientProxy";
 	private static final String SERVER_PROXY_CLASS = "net.crazysnailboy.mods.moreblocks.proxy.CommonProxy";

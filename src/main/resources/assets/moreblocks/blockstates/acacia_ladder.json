@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "moreblocks:acacia_ladder" },
+        "facing=east":  { "model": "moreblocks:acacia_ladder", "y": 90 },
+        "facing=south": { "model": "moreblocks:acacia_ladder", "y": 180 },
+        "facing=west":  { "model": "moreblocks:acacia_ladder", "y": 270 }
+    }
+}

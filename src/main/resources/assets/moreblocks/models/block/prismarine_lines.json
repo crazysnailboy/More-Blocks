@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "moreblocks:blocks/prismarine_block_lines_top",
+        "side": "moreblocks:blocks/prismarine_block_lines"
+    }
+}

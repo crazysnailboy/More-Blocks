@@ -63,7 +63,7 @@ public class Recipes {
 		// prismarine
 		addSlabRecipes(ModBlocks.prismarine_slab, Blocks.prismarine, BlockPrismarine.EnumType.values());
 		// stone
-		removeVanillaRecipe(Blocks.stone_slab);
+		removeVanillaRecipe(new ItemStack(Blocks.stone_slab, 1, BlockStoneSlab.EnumType.STONE.getMetadata()));
 		addSlabRecipe(Blocks.stone_slab, ModBlocks.double_smooth_stone);
 		addSlabRecipes(ModBlocks.stone_slab, Blocks.stone, BlockStone.EnumType.values());
 		// stone brick
@@ -176,5 +176,22 @@ public class Recipes {
 			if (itemstack != null && itemstack.getItem() == Item.getItemFromBlock(block)) remover.remove();
 		}
 	}
+	
+	private static void removeVanillaRecipe(ItemStack itemstack)
+	{
+		List<IRecipe> recipes = net.minecraft.item.crafting.CraftingManager.getInstance().getRecipeList();
+		Iterator<IRecipe> iterator = recipes.iterator();
+		
+		while (iterator.hasNext())
+		{
+			ItemStack _itemstack = iterator.next().getRecipeOutput();
+			if (_itemstack != null && _itemstack.getItem() == itemstack.getItem() && _itemstack.getItemDamage() == itemstack.getItemDamage())
+			{
+				iterator.remove();
+			}
+		}
+	}
+	
+	
 
 }

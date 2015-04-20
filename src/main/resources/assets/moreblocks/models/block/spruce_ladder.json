@@ -1,0 +1,7 @@
+{
+    "parent": "block/ladder",
+    "textures": {
+        "particle": "moreblocks:blocks/ladder_spruce",
+        "texture": "moreblocks:blocks/ladder_spruce"
+    }
+}
