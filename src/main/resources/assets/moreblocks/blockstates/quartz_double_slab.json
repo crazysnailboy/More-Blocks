@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=chiseled": { "model": "quartz_chiseled" },
+        "variant=lines": { "model": "quartz_lines" }
+    }
+}

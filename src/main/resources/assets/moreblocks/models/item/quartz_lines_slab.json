@@ -1,5 +1,5 @@
 {
-    "parent": "moreblocks:block/double_smooth_sandstone",
+    "parent": "moreblocks:block/quartz_lines_half_slab",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

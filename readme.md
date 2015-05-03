@@ -9,7 +9,7 @@ See the [wiki](http://chris-minecraft-mods.wikia.com/wiki/More_Blocks) for craft
 
 ## Download
 
-[MoreBlocks-0.1.4.jar](https://github.com/crazysnailboy/More-Blocks/raw/master/bin/MoreBlocks-0.1.4.jar)
+[MoreBlocks-0.1.5.jar](https://github.com/crazysnailboy/More-Blocks/raw/master/bin/MoreBlocks-0.1.5.jar)
 
 *Requires Minecraft Forge 11.14.1.1336*
 

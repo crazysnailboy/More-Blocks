@@ -3,12 +3,14 @@ package net.crazysnailboy.mods.moreblocks.item.crafting;
 import java.util.Iterator;
 import java.util.List;
 
+import net.crazysnailboy.mods.moreblocks.block.BlockQuartzSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockStonePillar;
 import net.crazysnailboy.mods.moreblocks.init.ModBlocks;
 import net.crazysnailboy.mods.moreblocks.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockQuartz;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
@@ -26,11 +28,10 @@ public class Recipes {
 	{	
 		
 		
-		// double stone slabs
-		// sandstone
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.double_smooth_sandstone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.sandstone, 1, BlockSandStone.EnumType.SMOOTH.getMetadata()) });
-		// stone
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.double_smooth_stone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.STONE.getMetadata()) });
+		// honed stone blocks
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.honed_quartz, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.quartz_block, 1, BlockQuartz.EnumType.DEFAULT.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.honed_sandstone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.sandstone, 1, BlockSandStone.EnumType.SMOOTH.getMetadata()) });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.honed_stone, 9, 0), new Object[] { "###", "###", "###", '#', new ItemStack(Blocks.stone, 1, BlockStone.EnumType.STONE.getMetadata()) });
 
 		// fences and fence gates
 		// nether rods
@@ -62,9 +63,14 @@ public class Recipes {
 		addSlabRecipe(ModBlocks.obsidian_slab, Blocks.obsidian);
 		// prismarine
 		addSlabRecipes(ModBlocks.prismarine_slab, Blocks.prismarine, BlockPrismarine.EnumType.values());
+		// quartz
+		removeVanillaRecipe(new ItemStack(Blocks.stone_slab, 1, BlockStoneSlab.EnumType.QUARTZ.getMetadata()));
+		addSlabRecipe(new ItemStack(Blocks.stone_slab, 1, BlockStoneSlab.EnumType.QUARTZ.getMetadata()), new ItemStack(Blocks.quartz_block, 1, BlockQuartz.EnumType.DEFAULT.getMetadata()));
+		addSlabRecipe(new ItemStack(ModBlocks.quartz_slab, 1, BlockQuartzSlab.EnumType.CHISELED.getMetadata()), new ItemStack(Blocks.quartz_block, 1, BlockQuartz.EnumType.CHISELED.getMetadata()));
+		addSlabRecipe(new ItemStack(ModBlocks.quartz_slab, 1, BlockQuartzSlab.EnumType.LINES.getMetadata()), new ItemStack(Blocks.quartz_block, 1, BlockQuartz.EnumType.LINES_Y.getMetadata()));
 		// stone
 		removeVanillaRecipe(new ItemStack(Blocks.stone_slab, 1, BlockStoneSlab.EnumType.STONE.getMetadata()));
-		addSlabRecipe(Blocks.stone_slab, ModBlocks.double_smooth_stone);
+		addSlabRecipe(Blocks.stone_slab, ModBlocks.honed_stone);
 		addSlabRecipes(ModBlocks.stone_slab, Blocks.stone, BlockStone.EnumType.values());
 		// stone brick
 		GameRegistry.addRecipe(new ItemStack(Blocks.stone_slab, 6, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new Object[] {"###", '#', new ItemStack(Blocks.stonebrick, 1, BlockStoneBrick.EnumType.DEFAULT.getMetadata()) });
@@ -117,6 +123,11 @@ public class Recipes {
 	private static void addSlabRecipe(Block output, Block input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 6), new Object[] { "###", '#', input });
+	}
+
+	private static void addSlabRecipe(ItemStack output, ItemStack input)
+	{
+		GameRegistry.addRecipe(new ItemStack(output.getItem(), 6, output.getItemDamage()), new Object[] { "###", '#', new ItemStack(input.getItem(), 1, input.getItemDamage()) });
 	}
 
 	private static void addSlabRecipes(Block output, Block input, Enum[] variants)

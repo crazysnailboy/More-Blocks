@@ -1,0 +1,11 @@
+{
+    "variants": {
+    
+        "half=bottom,variant=chiseled": { "model": "moreblocks:quartz_chiseled_half_slab" },
+        "half=top,variant=chiseled": { "model": "moreblocks:quartz_chiseled_upper_slab" },
+
+        "half=bottom,variant=lines": { "model": "moreblocks:quartz_lines_half_slab" },
+        "half=top,variant=lines": { "model": "moreblocks:quartz_lines_upper_slab" }
+
+    }
+}

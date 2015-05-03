@@ -10,8 +10,11 @@ import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineHalfSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarinePillar;
 import net.crazysnailboy.mods.moreblocks.block.BlockPrismarineWall;
+import net.crazysnailboy.mods.moreblocks.block.BlockQuartzDoubleSlab;
+import net.crazysnailboy.mods.moreblocks.block.BlockQuartzHalfSlab;
+import net.crazysnailboy.mods.moreblocks.block.BlockQuartzSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockSandStoneWall;
-import net.crazysnailboy.mods.moreblocks.block.BlockSmoothStone;
+import net.crazysnailboy.mods.moreblocks.block.BlockHonedStone;
 import net.crazysnailboy.mods.moreblocks.block.BlockStairs;
 import net.crazysnailboy.mods.moreblocks.block.BlockStoneBrickDoubleSlab;
 import net.crazysnailboy.mods.moreblocks.block.BlockStoneBrickHalfSlab;
@@ -30,6 +33,7 @@ import net.crazysnailboy.mods.moreblocks.item.ItemBlockStoneBrickWall;
 import net.crazysnailboy.mods.moreblocks.item.ItemBlockStonePillar;
 import net.crazysnailboy.mods.moreblocks.item.ItemBlockStoneWall;
 import net.crazysnailboy.mods.moreblocks.item.ItemPrismarineSlab;
+import net.crazysnailboy.mods.moreblocks.item.ItemQuartzSlab;
 import net.crazysnailboy.mods.moreblocks.item.ItemSlab;
 import net.crazysnailboy.mods.moreblocks.item.ItemStoneBrickSlab;
 import net.crazysnailboy.mods.moreblocks.item.ItemStoneSlab;
@@ -50,9 +54,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
-	// double smooth stone slabs
-	public static Block double_smooth_sandstone;
-	public static Block double_smooth_stone;
+	// honed stone blocks
+	public static Block honed_quartz;
+	public static Block honed_sandstone;
+	public static Block honed_stone;
 	
 	// fences and fence gates
 	public static Block nether_brick_fence_gate;
@@ -72,6 +77,8 @@ public class ModBlocks {
 	public static Block obsidian_double_slab;
 	public static Block prismarine_slab; 
 	public static Block prismarine_double_slab;
+	public static Block quartz_slab;
+	public static Block quartz_double_slab;
 	public static Block stone_slab; 
 	public static Block stone_double_slab;
 	public static Block stonebrick_slab; 
@@ -105,12 +112,11 @@ public class ModBlocks {
 		CreativeTabs tabRedstone = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabRedstone);
 		CreativeTabs tabDecorations = (ModConfiguration.useOwnCreativeTab ? ModCreativeTabs.tabBlock : CreativeTabs.tabDecorations);
 		
+		// honed stone blocks
+		honed_quartz = new BlockHonedStone().setUnlocalizedName("honed_quartz").setCreativeTab(tabBlock);
+		honed_sandstone = new BlockHonedStone().setUnlocalizedName("honed_sandstone").setCreativeTab(tabBlock);
+		honed_stone = new BlockHonedStone().setUnlocalizedName("honed_stone").setCreativeTab(tabBlock);
 		
-
-		// double smooth stone
-		double_smooth_sandstone = new BlockSmoothStone().setUnlocalizedName("double_smooth_sandstone").setCreativeTab(tabBlock);
-		double_smooth_stone = new BlockSmoothStone().setUnlocalizedName("double_smooth_stone").setCreativeTab(tabBlock);
-
 		// fences and fence gates
 		nether_brick_fence_gate = new BlockFenceGate(Material.rock).setUnlocalizedName("nether_brick_fence_gate").setCreativeTab(tabRedstone);
 
@@ -142,6 +148,8 @@ public class ModBlocks {
 		obsidian_double_slab = new BlockDoubleSlab(Material.rock).setHardness(50.0F).setResistance(2000.0F).setStepSound(Block.soundTypePiston).setUnlocalizedName("obsidian_double_slab");
 		prismarine_slab = new BlockPrismarineHalfSlab().setUnlocalizedName("prismarine_slab").setCreativeTab(tabBlock);
 		prismarine_double_slab = new BlockPrismarineDoubleSlab().setUnlocalizedName("prismarine_double_slab");
+		quartz_slab = new BlockQuartzHalfSlab().setUnlocalizedName("quartz_slab").setCreativeTab(tabBlock);
+		quartz_double_slab = new BlockQuartzDoubleSlab().setUnlocalizedName("quartz_double_slab");
 		stone_slab = new BlockStoneHalfSlab().setUnlocalizedName("stone_slab").setCreativeTab(tabBlock);
 		stone_double_slab = new BlockStoneDoubleSlab().setUnlocalizedName("stone_double_slab");
 		stonebrick_slab = new BlockStoneBrickHalfSlab().setUnlocalizedName("stonebrick_slab").setCreativeTab(tabBlock);
@@ -194,9 +202,10 @@ public class ModBlocks {
 	public static void registerBlocks()
 	{
 
-		// double smooth stone
-		registerBlock(double_smooth_sandstone);
-		registerBlock(double_smooth_stone);
+		// honed stone blocks
+		registerBlock(honed_quartz);
+		registerBlock(honed_sandstone);
+		registerBlock(honed_stone);
 		
 		// fences and fence gates
 		registerBlock(nether_brick_fence_gate);
@@ -211,6 +220,7 @@ public class ModBlocks {
 		// slabs
 		registerSlab(obsidian_slab, obsidian_double_slab, ItemSlab.class);
 		registerSlabs(prismarine_slab, prismarine_double_slab, ItemPrismarineSlab.class, BlockPrismarine.EnumType.values());
+		registerSlabs(quartz_slab, quartz_double_slab, ItemQuartzSlab.class, BlockQuartzSlab.EnumType.values());
 		registerSlabs(stone_slab, stone_double_slab, ItemStoneSlab.class, BlockStone.EnumType.values());
 		registerSlabs(stonebrick_slab, stonebrick_double_slab, ItemStoneBrickSlab.class, BlockStoneBrick.EnumType.values());
 		
@@ -238,9 +248,10 @@ public class ModBlocks {
 	
 	public static void registerRenders()
 	{	
-		// double smooth stone
-		registerInventoryModel(double_smooth_sandstone);
-		registerInventoryModel(double_smooth_stone);
+		// honed stone blocks
+		registerInventoryModel(honed_quartz);
+		registerInventoryModel(honed_sandstone);
+		registerInventoryModel(honed_stone);
 
 		// fences and fence gates
 		registerInventoryModel(nether_brick_fence_gate);
@@ -255,6 +266,7 @@ public class ModBlocks {
 		// slabs
 		registerInventoryModel(obsidian_slab);
 		registerInventoryModels(prismarine_slab, BlockPrismarine.EnumType.values());
+		registerInventoryModels(quartz_slab, BlockQuartzSlab.EnumType.values());
 		registerInventoryModels(stone_slab, BlockStone.EnumType.values());
 		registerInventoryModels(stonebrick_slab, BlockStoneBrick.EnumType.values());
 		

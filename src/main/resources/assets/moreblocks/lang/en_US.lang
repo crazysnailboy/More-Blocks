@@ -5,10 +5,11 @@ language.code=en_US
 itemGroup.moreblocks_tabBlock=Chris' More Blocks Mod
 
 
-### double smooth stone
+### honed stone blocks
 
-tile.double_smooth_sandstone.name=Double Smooth Sandstone
-tile.double_smooth_stone.name=Double Smooth Stone
+tile.honed_quartz.name=Honed Quartz
+tile.honed_sandstone.name=Honed Sandstone
+tile.honed_stone.name=Honed Stone
 
 
 ### fences and fence gates
@@ -58,6 +59,8 @@ tile.mossy_stonebrick_slab.name=Mossy Stone Brick Slab
 tile.obsidian_slab.name=Obsidian Slab
 tile.prismarine_slab.name=Prismarine Slab
 tile.prismarine_bricks_slab.name=Prismarine Brick Slab
+tile.quartz_chiseled_slab=Chiseled Quartz Slab
+tile.quartz_lines_slab=Pillar Quartz Slab
 tile.smooth_andesite_slab.name=Polished Andesite Slab
 tile.smooth_diorite_slab.name=Polished Diorite Slab
 tile.smooth_granite_slab.name=Polished Granite Slab
